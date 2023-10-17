@@ -1,5 +1,11 @@
 server:
-  port: 9999
+  port: 80
 ddns4j:
   enabled: true
+  shutdown-on-cleared: false
+spring:
+  h2:
+    console:
+      enabled: true
+
 

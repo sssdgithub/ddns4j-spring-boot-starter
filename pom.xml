@@ -4,7 +4,7 @@
     <modelVersion>4.0.0</modelVersion>
     <groupId>top.sssd</groupId>
     <artifactId>ddns4j-spring-boot-starter</artifactId>
-    <version>0.0.1-SNAPSHOT</version>
+    <version>1.0.1</version>
     <name>ddns4j-spring-boot-starter</name>
     <description>ddns4j-spring-boot-starter</description>
 
@@ -26,7 +26,7 @@
         <dependency>
             <groupId>top.sssd</groupId>
             <artifactId>ddns4j-core</artifactId>
-            <version>v1.0-RELEASE</version>
+            <version>v1.6.1-RELEASE</version>
         </dependency>
         <dependency>
             <groupId>org.springframework.boot</groupId>

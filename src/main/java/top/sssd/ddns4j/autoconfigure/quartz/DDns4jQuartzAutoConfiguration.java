@@ -1,14 +1,12 @@
-package top.sssd.ddns4j.config;
+package top.sssd.ddns4j.autoconfigure.quartz;
 
-import org.mybatis.spring.annotation.MapperScan;
+import org.quartz.SchedulerException;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.boot.autoconfigure.AutoConfigureBefore;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnMissingBean;
-import org.springframework.boot.autoconfigure.condition.ConditionalOnProperty;
 import org.springframework.boot.autoconfigure.quartz.QuartzAutoConfiguration;
-import org.springframework.boot.context.properties.EnableConfigurationProperties;
+import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.Bean;
-import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.scheduling.quartz.SchedulerFactoryBean;
 import org.springframework.scheduling.quartz.SpringBeanJobFactory;
@@ -16,36 +14,35 @@ import org.springframework.scheduling.quartz.SpringBeanJobFactory;
 import javax.annotation.Resource;
 import javax.sql.DataSource;
 
-
 /**
  * @author sssd
- * @create 2023-10-08-16:08
+ * @create 2023-10-16-22:09
  */
 @Configuration
-@EnableConfigurationProperties(value = {DDns4jProperties.class})
-@ConditionalOnProperty(name = "ddns4j.enabled", havingValue = "true")
-@ComponentScan(basePackages = {"top.sssd.ddns"})
-@MapperScan("top.sssd.ddns.mapper")
-@AutoConfigureBefore(QuartzAutoConfiguration.class)
-public class DDns4jAutoConfiguration {
+@AutoConfigureBefore({QuartzAutoConfiguration.class})
+public class DDns4jQuartzAutoConfiguration {
 
     @Resource
     @Qualifier("ddns4jDataSource")
     private DataSource dataSource;
 
+    @Resource
+    private ApplicationContext applicationContext;
+
     @Bean
     @ConditionalOnMissingBean
-    public SchedulerFactoryBean scheduler() {
+    public SchedulerFactoryBean scheduler() throws SchedulerException {
         SchedulerFactoryBean schedulerFactory = new SchedulerFactoryBean();
         schedulerFactory.setDataSource(dataSource);
         schedulerFactory.setJobFactory(springBeanJobFactory());
+        schedulerFactory.setApplicationContext(applicationContext);
         return schedulerFactory;
     }
 
     @Bean
     @ConditionalOnMissingBean
-    public SpringBeanJobFactory springBeanJobFactory() {
-        return new SpringBeanJobFactory();
+    public SpringBeanJobFactory springBeanJobFactory() throws SchedulerException {
+        SpringBeanJobFactory springBeanJobFactory = new SpringBeanJobFactory();
+        return springBeanJobFactory;
     }
-
 }

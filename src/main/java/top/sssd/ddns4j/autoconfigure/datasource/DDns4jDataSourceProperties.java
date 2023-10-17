@@ -1,4 +1,4 @@
-package top.sssd.ddns.config;
+package top.sssd.ddns4j.autoconfigure.datasource;
 
 import lombok.Data;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnWebApplication;

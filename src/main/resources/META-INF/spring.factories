@@ -1,3 +1,5 @@
 # Auto Configure
 org.springframework.boot.autoconfigure.EnableAutoConfiguration=\
-top.sssd.ddns4j.config.DDns4jAutoConfiguration
+top.sssd.ddns4j.autoconfigure.datasource.DDns4jH2AutoConfiguration,\
+top.sssd.ddns4j.autoconfigure.quartz.DDns4jQuartzAutoConfiguration,\
+top.sssd.ddns4j.autoconfigure.DDns4jAutoConfiguration
