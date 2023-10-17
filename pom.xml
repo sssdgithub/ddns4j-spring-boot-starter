@@ -6,7 +6,34 @@
     <artifactId>ddns4j-spring-boot-starter</artifactId>
     <version>1.0.1</version>
     <name>ddns4j-spring-boot-starter</name>
-    <description>ddns4j-spring-boot-starter</description>
+    <description>ddns4j-spring-boot-starter让动态解析变的更简单</description>
+    <url>https://gitee.com/Xsssd/ddns4j-spring-boot-starter</url>
+
+    <!-- 开源协议 Apache 2.0 -->
+    <licenses>
+        <license>
+            <name>Apache 2</name>
+            <url>http://www.apache.org/licenses/LICENSE-2.0.txt</url>
+            <distribution>repo</distribution>
+            <comments>A business-friendly OSS license</comments>
+        </license>
+    </licenses>
+
+    <!-- 作者信息 -->
+    <developers>
+        <developer>
+            <name>sssd</name>
+            <email>15829762162@163.com</email>
+        </developer>
+    </developers>
+
+    <!-- 仓库信息 -->
+    <scm>
+        <tag>master</tag>
+        <url>https://gitee.com/Xsssd/ddns4j-spring-boot-starter.git</url>
+        <connection>scm:git:https://gitee.com/Xsssd/ddns4j-spring-boot-starter.git</connection>
+        <developerConnection>scm:git:https://gitee.com/Xsssd/ddns4j-spring-boot-starter.git</developerConnection>
+    </scm>
 
     <properties>
         <java.version>1.8</java.version>
@@ -14,6 +41,19 @@
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
         <spring-boot.version>2.7.16</spring-boot.version>
     </properties>
+
+    <dependencyManagement>
+        <dependencies>
+            <dependency>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-dependencies</artifactId>
+                <version>${spring-boot.version}</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
+
     <dependencies>
         <dependency>
             <groupId>org.springframework.boot</groupId>
@@ -38,19 +78,8 @@
             <artifactId>lombok</artifactId>
             <optional>true</optional>
         </dependency>
-
     </dependencies>
-    <dependencyManagement>
-        <dependencies>
-            <dependency>
-                <groupId>org.springframework.boot</groupId>
-                <artifactId>spring-boot-dependencies</artifactId>
-                <version>${spring-boot.version}</version>
-                <type>pom</type>
-                <scope>import</scope>
-            </dependency>
-        </dependencies>
-    </dependencyManagement>
+
     <build>
         <plugins>
             <plugin>
