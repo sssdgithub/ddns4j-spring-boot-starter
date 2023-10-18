@@ -5,14 +5,14 @@
     <parent>
         <groupId>top.sssd</groupId>
         <artifactId>ddns4j</artifactId>
-        <version>1.0.1</version>
+        <version>1.0.2</version>
         <relativePath>../pom.xml</relativePath>
     </parent>
 
     <modelVersion>4.0.0</modelVersion>
     <groupId>top.sssd</groupId>
     <artifactId>ddns4j-spring-boot-starter</artifactId>
-    <version>1.0.1</version>
+    <version>1.0.2</version>
     <name>ddns4j-spring-boot-starter</name>
     <description>ddns4j-spring-boot-starter让动态解析变的更简单</description>
     <url>https://gitee.com/Xsssd/ddns4j-spring-boot-starter</url>
