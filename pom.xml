@@ -80,26 +80,22 @@
         </dependency>
     </dependencies>
 
-    <!-- 定义snapshots库和releases库的nexus地址 -->
     <distributionManagement>
         <snapshotRepository>
-            <!-- 这里的id一定要和maven配置里的server的id一致 -->
             <id>sssd.top.deploymentRepo</id>
             <name>Sonatype Nexus Snapshots</name>
-            <!-- url的s01.oss.sonatype.org部分 以你的issue收到的comment里面的为准 -->
             <url>https://s01.oss.sonatype.org/content/repositories/snapshots/</url>
         </snapshotRepository>
         <repository>
-            <!-- 这里的id一定要和maven配置里的server的id一致 -->
             <id>sssd.top.deploymentRepo</id>
             <name>Nexus Release Repository</name>
-            <!-- url的s01.oss.sonatype.org部分 以你的issue收到的comment里面的为准 -->
             <url>https://s01.oss.sonatype.org/service/local/staging/deploy/maven2/</url>
         </repository>
     </distributionManagement>
 
     <build>
         <plugins>
+            <!--compiler-->
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-compiler-plugin</artifactId>
@@ -110,20 +106,46 @@
                     <encoding>UTF-8</encoding>
                 </configuration>
             </plugin>
+            <!-- Source -->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-source-plugin</artifactId>
+                <version>2.2.1</version>
+                <executions>
+                    <execution>
+                        <phase>package</phase>
+                        <goals>
+                            <goal>jar-no-fork</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+            <!--jar-->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-jar-plugin</artifactId>
+                <version>3.2.2</version>
+                <configuration>
+                    <archive>
+                        <manifest>
+                            <addDefaultImplementationEntries>true</addDefaultImplementationEntries>
+                        </manifest>
+                    </archive>
+                </configuration>
+            </plugin>
+            <!--sonatype-->
             <plugin>
                 <groupId>org.sonatype.plugins</groupId>
                 <artifactId>nexus-staging-maven-plugin</artifactId>
                 <version>1.6.7</version>
                 <extensions>true</extensions>
                 <configuration>
-                    <!-- 这里的id一定要和maven配置里的server的id一致 -->
                     <serverId>sssd.top.deploymentRepo</serverId>
-                    <!--  同样以收到的comment中的为准-->
                     <nexusUrl>https://s01.oss.sonatype.org/</nexusUrl>
-                    <!-- 这里配置为true以后 不用再去nexus中手动发布 -->
                     <autoReleaseAfterClose>true</autoReleaseAfterClose>
                 </configuration>
             </plugin>
+            <!--gpg-->
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-gpg-plugin</artifactId>
