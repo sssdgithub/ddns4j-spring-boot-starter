@@ -3,11 +3,20 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
     <groupId>top.sssd</groupId>
-    <artifactId>ddns4j-spring-boot-starter</artifactId>
+    <artifactId>ddns4j</artifactId>
     <version>1.0.1</version>
-    <name>ddns4j-spring-boot-starter</name>
+    <packaging>pom</packaging>
+
+
+    <name>ddns4j</name>
     <description>ddns4j-spring-boot-starter让动态解析变的更简单</description>
     <url>https://gitee.com/Xsssd/ddns4j-spring-boot-starter</url>
+
+    <modules>
+        <module>ddns4j-core</module>
+        <module>ddns4j-spring-boot-example</module>
+        <module>ddns4j-spring-boot-starter</module>
+    </modules>
 
     <!-- 开源协议 Apache 2.0 -->
     <licenses>
@@ -53,32 +62,6 @@
             </dependency>
         </dependencies>
     </dependencyManagement>
-
-    <dependencies>
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-autoconfigure</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>top.sssd</groupId>
-            <artifactId>ddns4j-core</artifactId>
-            <version>v1.6.1-RELEASE</version>
-        </dependency>
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-configuration-processor</artifactId>
-            <optional>true</optional>
-        </dependency>
-        <dependency>
-            <groupId>org.projectlombok</groupId>
-            <artifactId>lombok</artifactId>
-            <optional>true</optional>
-        </dependency>
-    </dependencies>
 
     <distributionManagement>
         <snapshotRepository>
