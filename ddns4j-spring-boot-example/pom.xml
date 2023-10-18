@@ -4,7 +4,7 @@
     <modelVersion>4.0.0</modelVersion>
     <groupId>top.sssd</groupId>
     <artifactId>ddns4j-spring-boot-example</artifactId>
-    <version>0.0.1-SNAPSHOT</version>
+    <version>0.0.1</version>
     <name>ddns4j-spring-boot-example</name>
     <description>ddns4j-spring-boot-example</description>
     <properties>
