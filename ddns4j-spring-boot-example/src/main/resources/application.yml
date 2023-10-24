@@ -1,13 +1,13 @@
 server:
   port: 80
 ddns4j:
-  enabled: true
-  shutdown-on-cleared: false
+  enabled: true  #是否开启ddns4j
+  shutdown-on-cleared: true #关闭时清除dns记录
   easy-mode:
-    service-provider: 1
-    service-provider-id:
-    service-provider-secret:
-    domain:
+    service-provider: 1 # 1 阿里云 2 腾讯云 3 cloudflare
+    service-provider-id: your-service-provider-id
+    service-provider-secret: your-service-provider-secret
+    domain: your-domain
 
 
 

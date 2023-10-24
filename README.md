@@ -23,7 +23,20 @@
     <version>1.0.2</version>
 </dependency>
 ```
-### 配置
+### 简易功能配置
+```yaml
+ddns4j:
+  enabled: true  #是否开启ddns4j
+  shutdown-on-cleared: true #关闭时清除dns记录
+  easy-mode:
+    service-provider: 1 # 1 阿里云 2 腾讯云 3 cloudflare
+    service-provider-id: your-service-provider-id
+    service-provider-secret: your-service-provider-secret
+    domain: your-domain
+```
+### 简易版查看是否正常运行
+![简易版查看是否正常运行](./doc/简易版配置正常启动.png "简易版查看是否正常运行")
+### 完整功能配置
 >在 application.properties 或 application.yml 文件中添加以下配置：
 ```yaml
 ddns4j:
@@ -31,7 +44,7 @@ ddns4j:
   shutdown-on-cleared: true #是否在服务关闭时,清除dns记录
 ```
 ### 启动web项目
->在浏览器中http:ip:port即可访问
+>在浏览器中http:ip:port/ddns4j.html 即可访问
 
 ![ddns4j-功能区介绍](./doc/ddns4j-功能区介绍.png "ddns4j-功能区介绍")
 ![效果图](./doc/效果图.png "效果图")

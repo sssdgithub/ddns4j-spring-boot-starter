@@ -65,7 +65,8 @@ public class DDns4jAutoConfiguration  {
         parsingRecord.setServiceProviderSecret(dDns4jProperties.getEasyMode().getServiceProviderSecret());
         parsingRecord.setServiceProvider(dDns4jProperties.getEasyMode().getServiceProvider());
         parsingRecord.setUpdateFrequency(UpdateFrequencyEnum.ONE_MINUTE.getCode());
-        parsingRecord.setDomain(dDns4jProperties.getEasyMode().getDomain());
+        String domain = dDns4jProperties.getEasyMode().getDomain();
+        parsingRecord.setDomain(domain);
 
 
         List<ParsingRecord> list = parsingRecordService.lambdaQuery()
@@ -74,9 +75,11 @@ public class DDns4jAutoConfiguration  {
                 .list();
         if (CollectionUtils.isEmpty(list)) {
             parsingRecordService.add(parsingRecord);
+            log.info("ddns4j已正常启动,您填入的域名为:{}",domain);
             return;
         }
         parsingRecordService.modify(list.get(0));
+        log.info("ddns4j已正常启动,您填入的域名为:{}",domain);
     }
 
 
