@@ -74,7 +74,7 @@
         <dependency>
             <groupId>top.sssd</groupId>
             <artifactId>ddns4j-core</artifactId>
-            <version>v1.6.1-RELEASE</version>
+            <version>v1.6.2-RELEASE</version>
         </dependency>
         <dependency>
             <groupId>org.springframework.boot</groupId>

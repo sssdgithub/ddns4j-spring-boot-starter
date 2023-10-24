@@ -1,4 +1,4 @@
-<h1 align="center" style="margin: 30px 0 30px; font-weight: bold;">ddns4j-spring-boot-starter v1.0.2</h1>
+<h1 align="center" style="margin: 30px 0 30px; font-weight: bold;">ddns4j-spring-boot-starter v1.0.3</h1>
 <h4 align="center" style="margin: 30px 0 30px; font-weight: bold;">DDNS4J -- 让动态域名解析变的更简单</h4>
 
 <p align="center">
@@ -20,7 +20,7 @@
 <dependency>
     <groupId>top.sssd</groupId>
     <artifactId>ddns4j-spring-boot-starter</artifactId>
-    <version>1.0.2</version>
+    <version>1.0.3</version>
 </dependency>
 ```
 ### 简易功能配置
