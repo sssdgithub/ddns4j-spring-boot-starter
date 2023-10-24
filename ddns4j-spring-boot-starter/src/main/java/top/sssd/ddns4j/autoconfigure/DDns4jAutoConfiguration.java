@@ -19,7 +19,7 @@ import top.sssd.ddns.model.entity.ParsingRecord;
 import top.sssd.ddns.service.IParsingRecordService;
 import top.sssd.ddns4j.autoconfigure.datasource.DDns4jH2DataSourceInitializer;
 import top.sssd.ddns4j.autoconfigure.hook.DDns4jClearDnsRecordShutDownHook;
-import top.sssd.ddns4j.autoconfigure.service.EasyModeCondition;
+import top.sssd.ddns4j.autoconfigure.condition.EasyModeCondition;
 
 import javax.sql.DataSource;
 import java.util.List;

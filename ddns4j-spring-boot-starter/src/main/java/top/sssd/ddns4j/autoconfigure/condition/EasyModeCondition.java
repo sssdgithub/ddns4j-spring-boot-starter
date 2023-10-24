@@ -1,4 +1,4 @@
-package top.sssd.ddns4j.autoconfigure.service;
+package top.sssd.ddns4j.autoconfigure.condition;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Condition;
