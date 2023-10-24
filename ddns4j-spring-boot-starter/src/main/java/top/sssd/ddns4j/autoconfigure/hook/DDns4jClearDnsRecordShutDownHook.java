@@ -29,7 +29,6 @@ public class DDns4jClearDnsRecordShutDownHook implements DisposableBean {
     IJobTaskService jobTaskService;
 
 
-    //todo 简易版开关,如果加上 只需要配置属性可以,不需要显示页面
     @Override
     public void destroy() throws Exception {
         log.info("DDns4J ClearDnsRecordHook Destroy Starting...");

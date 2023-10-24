@@ -3,9 +3,12 @@ server:
 ddns4j:
   enabled: true
   shutdown-on-cleared: false
-spring:
-  h2:
-    console:
-      enabled: true
+  easy-mode:
+    service-provider: 1
+    service-provider-id:
+    service-provider-secret:
+    domain:
+
+
 
 
