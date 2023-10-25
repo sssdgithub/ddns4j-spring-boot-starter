@@ -2,7 +2,6 @@ package top.sssd.ddns4j.autoconfigure.hook;
 
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.DisposableBean;
-import org.springframework.boot.autoconfigure.condition.ConditionalOnProperty;
 import org.springframework.stereotype.Component;
 import org.springframework.util.CollectionUtils;
 import top.sssd.ddns.model.entity.JobTask;
@@ -19,7 +18,6 @@ import java.util.List;
  */
 @Slf4j
 @Component
-@ConditionalOnProperty(name = "ddns4j.shutdown-on-cleared", havingValue = "true")
 public class DDns4jClearDnsRecordShutDownHook implements DisposableBean {
 
     @Resource
