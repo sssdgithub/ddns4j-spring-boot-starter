@@ -1,4 +1,4 @@
-<h1 align="center" style="margin: 30px 0 30px; font-weight: bold;">ddns4j-spring-boot-starter v1.0.3</h1>
+<h1 align="center" style="margin: 30px 0 30px; font-weight: bold;">ddns4j-spring-boot-starter v1.0.4</h1>
 <h4 align="center" style="margin: 30px 0 30px; font-weight: bold;">DDNS4J -- 让动态域名解析变的更简单</h4>
 
 <p align="center">
@@ -20,7 +20,7 @@
 <dependency>
     <groupId>top.sssd</groupId>
     <artifactId>ddns4j-spring-boot-starter</artifactId>
-    <version>1.0.3</version>
+    <version>1.0.4</version>
 </dependency>
 ```
 ### 简易功能配置
@@ -44,7 +44,7 @@ ddns4j:
   shutdown-on-cleared: true #是否在服务关闭时,清除dns记录
 ```
 ### 启动web项目
->在浏览器中http:ip:port/ddns4j.html 即可访问
+>在浏览器中http:ip:port/index.html 即可访问
 
 ![ddns4j-功能区介绍](./doc/ddns4j-功能区介绍.png "ddns4j-功能区介绍")
 ![效果图](./doc/效果图.png "效果图")
