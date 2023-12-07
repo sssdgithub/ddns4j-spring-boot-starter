@@ -8,6 +8,7 @@ import org.springframework.util.CollectionUtils;
 import top.sssd.ddns.common.enums.RecordTypeEnum;
 import top.sssd.ddns.common.enums.UpdateFrequencyEnum;
 import top.sssd.ddns.model.entity.ParsingRecord;
+import top.sssd.ddns.model.response.NetWorkSelectResponse;
 import top.sssd.ddns.service.IParsingRecordService;
 import top.sssd.ddns4j.autoconfigure.DDns4jProperties;
 
@@ -44,6 +45,11 @@ public class DDns4jContextRefreshedEasyMode implements ApplicationRunner {
         parsingRecord.setServiceProvider(dDns4jProperties.getEasyMode().getServiceProvider());
         parsingRecord.setUpdateFrequency(UpdateFrequencyEnum.ONE_MINUTE.getCode());
         String domain = dDns4jProperties.getEasyMode().getDomain();
+
+        List<NetWorkSelectResponse> modeIpValue = parsingRecordService.getModeIpValue(parsingRecord.getGetIpMode(), parsingRecord.getRecordType());
+        String getModeIpValue = modeIpValue.stream().findAny().get().getValue().trim();
+        parsingRecord.setGetIpModeValue(getModeIpValue);
+
         parsingRecord.setDomain(domain);
 
         List<ParsingRecord> list = parsingRecordService.lambdaQuery()
