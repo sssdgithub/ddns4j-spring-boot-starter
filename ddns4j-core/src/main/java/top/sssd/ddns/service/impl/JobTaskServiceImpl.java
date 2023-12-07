@@ -3,13 +3,13 @@ package top.sssd.ddns.service.impl;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import lombok.extern.slf4j.Slf4j;
 import org.quartz.*;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import top.sssd.ddns.common.BizException;
 import top.sssd.ddns.mapper.JobTaskMapper;
 import top.sssd.ddns.model.entity.JobTask;
 import top.sssd.ddns.service.IJobTaskService;
 
-import javax.annotation.Resource;
 import java.util.List;
 
 /**
@@ -19,7 +19,7 @@ import java.util.List;
 @Service
 @Slf4j
 public class JobTaskServiceImpl extends ServiceImpl<JobTaskMapper, JobTask> implements IJobTaskService {
-    @Resource
+    @Autowired
     private Scheduler scheduler;
 
     @Override
